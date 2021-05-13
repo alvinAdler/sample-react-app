@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "Doctors Appointment",
+      "day": "May 10, 2021 - 14:00:00",
+      "reminder": true
+    },
+    {
+        "id": 2,
+        "text": "Project meetup",
+        "day": "May 10, 2021 - 20:30:00",
+        "reminder": true
+    },
+    {
+        "id": 3,
+        "text": "Midnight Assignment",
+        "day": "May 10, 2021 - 22:00:00",
+        "reminder": false
+    }
+  ]
+}
