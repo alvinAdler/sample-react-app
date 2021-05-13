@@ -1,13 +1,144 @@
-body {
+html, body{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container{
+  margin-left: 30px;
+  margin-right: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.holder{
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  background-color: #e9ecef;
+  border-radius: 0.3rem;
+}
+
+.task{
+  background-color: rgba(209, 209, 209, 0.8);
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 10px 0;
+  border: 3px solid #c7c7c7;
+  transition: 200ms;
+}
+
+.reminder{
+  border-left: 15px solid #2284E6;
+}
+
+.task:hover{
+  color: #f2f2f2;
+  background-color: rgba(43, 43, 43, 0.8);
+  transition: 200ms;
+}
+
+.task h3{
+  display: flex;
+  justify-content: space-between;
+}
+
+.compHeader{
+  display: flex;
+  background-color: #2b2b2b;
+  color: #f2f2f2;
+  border-radius: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.btn{
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  font-family: sans-serif;
+  background-color: #919191;
+  color: #f2f2f2;
+  transition: 200ms;
+  font-weight: bold;
+}
+
+.btn:hover{
+  transition: 200ms;
+}
+
+.btn-add-task{
+  padding: 10px 15px;
+}
+
+.btn-add-task:hover{
+  transition: 200ms;
+  padding: 15px 20px;
+}
+
+.btn-submit{
+  background-color: #2284E6;
+  transition: 200ms;
+  padding: 10px 15px;
+}
+
+.btn-submit:hover{
+  transition: 200ms;
+  padding: 15px 20px;
+}
+
+.user-form{
+  /* border: 3px solid orange; */
+  margin: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: 200ms;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.user-form button[type="submit"]{
+  align-self: center;
+}
+
+.form-data{
+  display: flex;
+  /* border: 3px solid green; */
+  flex-direction: column;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.form-data input{
+  /* border: 3px solid red; */
+  padding: 8px;
+  margin-top: 5px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  transition: 200ms;
+  border: 2px solid transparent;
+}
+
+.form-data input:focus{
+  transition: 200ms;
+  border: 2px solid #2284E6;
+}
+
+.form-data label{
+  /* border: 3px solid blue; */
+  font-family: sans-serif;
+}
+
+.form-data-checkbox{
+  display: flex;
+  flex-direction: row;
+  /* border: 3px solid green; */
+}
+
+.form-data-checkbox input{
+  margin-left: 3%;
 }

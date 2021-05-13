@@ -1,23 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import Tasks from './components/Tasks'
+import {useState} from 'react'
+import EmptyBanner from './components/EmptyBanner'
+import AddTask from './components/AddTask'
 
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false)
+
+  const [tasks, setTasks] = useState([
+    {
+        id: 1,
+        text: "Doctors Appointment",
+        day: "May 10, 2021 - 14:00:00",
+        reminder: true,
+    },
+    {
+        id: 2,
+        text: "Project meetup",
+        day: "May 10, 2021 - 20:30:00",
+        reminder: true,
+    },
+    {
+        id: 3,
+        text: "Midnight Assignment",
+        day: "May 10, 2021 - 22:00:00",
+        reminder: false,
+    }
+  ])
+
+  //Add a task
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 1000) + 1
+    const new_task = {id, ...task}
+
+    setTasks([...tasks, new_task])
+    console.log(tasks)
+  }
+ 
+  // Delete a task
+  const deleteTask = (task_id) => {
+    console.log(task_id)
+    setTasks(tasks.filter((task) => (task.id !== task_id)))
+  }
+
+  // Toggle a task
+  const toggleTask = (task_id) => {
+    setTasks(tasks.map((task) => (task.id === task_id ? 
+      {...task, reminder:!task.reminder} : 
+      task)))
+  }
+
+  // Toggle showAddTask
+  const toggleShowAddTask = () => {
+    setShowAddTask(!showAddTask)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <div className="holder">
+        <Header onAdd={toggleShowAddTask} showAddTask={showAddTask}/>
+        {showAddTask && <AddTask onAdd={addTask}/>}
+        {tasks.length > 0 ? 
+        (<Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleTask}/>) : 
+        (<EmptyBanner/>)}
+      </div>
     </div>
   );
 }
